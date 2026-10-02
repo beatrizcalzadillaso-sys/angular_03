@@ -1,0 +1,23 @@
+<p>listado works!</p>
+@if (heroeBorrado) {
+  <h3>HEROE BORRADO</h3>
+  <p>{{ heroeBorrado }}</p>
+} 
+@else if (!heroeBorrado && !todoBorrado) {
+  <p>No has borrado nada</p>
+} 
+@else {
+  <p>En cualquier otro caso</p>
+}
+
+<!-- Lista numerada de héroes disponibles -->
+<ol>
+  @for (heroe of heroes; track heroe) {
+    <li>{{ heroe }}</li>
+  }
+</ol>
+
+<!-- Botones de acción -->
+<button (click)="borrarTodos()">Borrar Todo</button>
+<button (click)="borrarPrimero()">Borrar Primero</button>
+<button (click)="borrarUltimo()">Borrar Ultimo</button>
